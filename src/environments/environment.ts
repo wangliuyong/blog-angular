@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+	url: '//localhost/ma-dev-yuqing/mautic-github/',
+	api: {
+		php_url: 'https://blog-server.hunger-valley.com',//'http://weixinmp.marketin.cn/liuhengbo/ma-api/public/api',
+		java_url: 'http://192.168.2.176:8000/ma'
+	}
 };
 
 /*
