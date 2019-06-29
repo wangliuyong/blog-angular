@@ -1,3 +1,5 @@
-<p>
-  blog-list works!
-</p>
+<div class="blog-list" [ngClass]="{'red':flag}" (click)="trigger()"  id="blog">
+  <ul *ngFor="let item of blogs" >
+    <li *ngIf="item.title" >{{item.title}}</li>
+  </ul>
+</div>

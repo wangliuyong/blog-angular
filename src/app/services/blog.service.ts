@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import {HttpService} from './http.service'
+import {Respones} from '../classs/res'
 import {Config} from '../model/api'
 
 
@@ -16,7 +17,7 @@ export class BlogService {
   //获取博客列表
   public getBlogs() {
     return new Promise((resolve,reject)=>{
-      this.httpService.get('/blog',{},false).then((res:any)=>{
+      this.httpService.get('/blog',{},false).then((res:Respones)=>{
         if(res.code===200){
           //console.log(res)
           resolve(res)
