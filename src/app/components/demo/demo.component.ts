@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild,Input} from '@angular/core';
+import { Component, OnInit ,ViewChild,Input,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-demo',
@@ -7,13 +7,17 @@ import { Component, OnInit ,ViewChild,Input} from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 
+  public str:string="song daat00000"
   @ViewChild('demo') myDemo:any;
   @Input () parentData:any;
+  @Input() fromFun:any;
+  @Output() testSon=new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
     console.log(this.parentData);
+    //this.fromFun('son')
     
   }
 
@@ -27,6 +31,8 @@ export class DemoComponent implements OnInit {
   }
 
   //方法
-
+  test(){
+    this.testSon.emit('son emit')
+  }
 
 }

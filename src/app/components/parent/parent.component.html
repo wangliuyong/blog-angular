@@ -1,4 +1,9 @@
 <p>
   parent works!
-  <app-demo [parentData]="parData"></app-demo>
+  <app-demo 
+  #demo
+  [parentData]="parData"
+  [fromFun]="fromFun"
+  (testSon)="fromFun($event)"
+  ></app-demo>
 </p>

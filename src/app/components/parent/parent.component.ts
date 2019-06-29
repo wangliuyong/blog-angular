@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -8,16 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 
   public parData:string="来自于父组件的数据";
+  @ViewChild('demo') son:any;
 
   constructor() { }
 
   ngOnInit() {
-
+    
   }
 
-  fromFun(): void{
-    console.log("来自于父组件的方法");
-    
+  ngAfterViewInit() {
+    console.log("son:",this.son.str);
+  }
+
+  fromFun(data:string): void{
+    console.log(data);
   }
 
 }

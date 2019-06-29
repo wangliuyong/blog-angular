@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
+
 
 import { environment } from '../../environments/environment';
 //import {Config} from '../model/api'
@@ -38,6 +39,21 @@ export class HttpService {
     return this.http.get(reqUrl, { params: dataParams })
     // 响应转化为Promise
       .toPromise();
+
+
+    //另一种Observable
+
+  }
+
+  public post(path: string, params: any){
+
+    let httpOption={headers: new HttpHeaders({"Content-Type":'application/json'})}
+
+    this.http.post(path,params,httpOption).subscribe()
+  }
+  //跨域
+  public jsonp(path){
+    this.http.jsonp(path,'calaback').subscribe()
   }
 
 
